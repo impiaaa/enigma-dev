@@ -78,7 +78,7 @@ string toString(const variant &a) {
 string toString(const var &a) {
   //Arrays (2D and linear) are printed differently.
   if (a.array_height() > 1) {
-    std::stringstream res;
+    std::ostringstream res;
     res << "<";
     for (int i = 0; i < a.array_height(); i++) {
       for (int j = 0; j < a.array_len(i); j++) {
@@ -94,7 +94,7 @@ string toString(const var &a) {
     res << ">";
     return res.str();
   } else if (a.array_len() > 1) {
-    std::stringstream res;
+    std::ostringstream res;
     res << "[";
     for (int i = 0; i < a.array_len(); i++) {
       res << toString(const_cast<var &>(a)[i]);

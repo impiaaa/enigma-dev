@@ -40,7 +40,7 @@
 
 namespace {
  inline std::string pointer2string(void* ptr) {
-   std::stringstream ss;
+   std::ostringstream ss;
    ss << ptr;  
    return  ss.str(); 
  }

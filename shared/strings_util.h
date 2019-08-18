@@ -17,7 +17,7 @@ inline std::string string_replace_all(std::string str, std::string substr, std::
 
 inline std::vector<std::string> split_string(const std::string &str, char delimiter) {
         std::vector<std::string> vec;
-        std::stringstream sstr(str);
+        std::istringstream sstr(str);
         std::string tmp;
 
         while (std::getline(sstr, tmp, delimiter))

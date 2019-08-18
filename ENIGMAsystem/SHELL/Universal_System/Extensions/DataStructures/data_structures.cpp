@@ -710,7 +710,7 @@ unsigned int ds_grid_duplicate(const unsigned int source)
 
 std::string ds_grid_write(const unsigned int id)
 {
-  std::stringstream ss;
+  std::ostringstream ss;
   ss.flags(std::ios::hex | std::ios::uppercase | std::ios::internal);
   ss.width(4);
   ss.fill('0');
@@ -1008,7 +1008,7 @@ unsigned int ds_map_duplicate(const unsigned int source)
 
 std::string ds_map_write(const unsigned int id)
 {
-  std::stringstream ss;
+  std::ostringstream ss;
   ss.flags(std::ios::hex | std::ios::uppercase | std::ios::internal);
   ss.width(4);
   ss.fill('0');
@@ -1298,7 +1298,7 @@ unsigned int ds_list_duplicate(const unsigned int source)
 
 std::string ds_list_write(const unsigned int id)
 {
-  std::stringstream ss;
+  std::ostringstream ss;
   ss.flags(std::ios::hex | std::ios::uppercase | std::ios::internal);
   ss.width(4);
   ss.fill('0');
@@ -1552,7 +1552,7 @@ unsigned int ds_priority_duplicate(const unsigned int source)
 
 std::string ds_priority_write(const unsigned int id)
 {
-  std::stringstream ss;
+  std::ostringstream ss;
   ss.flags(std::ios::hex | std::ios::uppercase | std::ios::internal);
   ss.width(4);
   ss.fill('0');
@@ -1755,7 +1755,7 @@ unsigned int ds_queue_duplicate(const unsigned int source)
 
 std::string ds_queue_write(const unsigned int id)
 {
-  std::stringstream ss;
+  std::ostringstream ss;
   ss.flags(std::ios::hex | std::ios::uppercase | std::ios::internal);
   ss.width(4);
   ss.fill('0');
@@ -1932,7 +1932,7 @@ unsigned int ds_stack_duplicate(const unsigned int source)
 
 std::string ds_stack_write(const unsigned int id)
 {
-  std::stringstream ss;
+  std::ostringstream ss;
   ss.flags(std::ios::hex | std::ios::uppercase | std::ios::internal);
   ss.width(4);
   ss.fill('0');
