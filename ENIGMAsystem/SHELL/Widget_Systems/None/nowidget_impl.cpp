@@ -26,15 +26,12 @@ using std::string;
 
 #include "GameSettings.h"
 
-#include <iostream>
-#include <iomanip>
-using namespace std;
-
 #ifdef _WIN32
 #  define byte __windows_byte_workaround
 #  include <windows.h>
 #  undef byte
 #  define TC_WINDOWS 1
+#define getline __getline
 #else
 #  include <termios.h>
 #  include <unistd.h>
@@ -96,44 +93,49 @@ void show_info() {
 }
 
 bool show_question(string str) {
-  cout << str;
+  printf("%s", str.c_str());
   char answer = 0;
   while (answer != 'N' && answer != 'Y') {
-    cout << endl << "[Y/N]:";
-    cin >> answer;
+    printf("\n%s", "[Y/N]:");
+    scanf("%c", &answer);
     answer = toupper(answer);
   }
   return (answer == 'Y');
 }
 
 string get_login(string username, string password) {
-  string input;
-  cout << "Username: " << flush;
-  cin >> input;
+  char* input = NULL;
+  size_t n = 0;
+  printf("Username: ");
+  fflush(stdout);
+  getline(&input, &n, stdin);
   {
     PasswordContext pw;
-    input += '\0';
-    cout << "Password: " << flush;
-    cin >> input;
-    cout << endl;
+    printf("Password: ");
+    fflush(stdout);
+    getline(&input, &n, stdin);
+    putchar('\n');
   }
-  return input;
+  std::string ret(input, n);
+  free(input);
+  return ret;
 }
 
 string get_string(string str, string def) {
   printf("%s\n", str.c_str());
-  string input;
-  cin >> input;
-  return (input.empty()) ? def : input;
+  char* input = NULL;
+  size_t n = 0;
+  getline(&input, &n, stdin);
+  std::string ret(input, n);
+  free(input);
+  return (ret.empty()) ? def : ret;
 }
 
 double get_integer(string str, var def) {
   double val = (strtod(def.c_str(), NULL)) ? : (double)def;
   printf("%s\n", str.c_str());
-  string input;
-  cin >> input;
-  if (input.empty()) return val;
-  return strtod(input.c_str(), NULL);
+  scanf("%lf", &val);
+  return val;
 }
 
 }
