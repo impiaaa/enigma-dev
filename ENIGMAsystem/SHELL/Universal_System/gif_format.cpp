@@ -26,7 +26,6 @@
 #include <vector>
 #include <cmath>
 #include <sstream>
-#include <iostream>
 
 namespace {
 const unsigned int ERR_SUCCESS          = 0; //No error (easy boolean checK)

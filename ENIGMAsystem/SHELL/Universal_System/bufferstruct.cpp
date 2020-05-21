@@ -25,7 +25,6 @@
 
 #include <cstring>
 #include <fstream>
-#include <iostream>
 
 using std::string;
 
