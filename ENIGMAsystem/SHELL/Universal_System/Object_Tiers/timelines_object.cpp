@@ -24,6 +24,7 @@
 */
 
 #include "timelines_object.h"
+#include <iterator>
 
 namespace enigma
 {

@@ -21,7 +21,7 @@
 
 #include <limits>
 #include <algorithm> // min/max
-#include <stdlib.h>
+#include <cstdlib>
 #include <cmath>
 
 // Note: This hack is justifiable in that it was put here to prevent
