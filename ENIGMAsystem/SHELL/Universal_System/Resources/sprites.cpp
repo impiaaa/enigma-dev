@@ -26,6 +26,7 @@
 #include "Widget_Systems/widgets_mandatory.h"
 
 #include <string>
+#include <algorithm>
 
 using enigma::Sprite;
 using enigma::sprites;

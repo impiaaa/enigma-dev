@@ -30,6 +30,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <vector>
+#include <cstdlib>
 
 using std::list;
 using std::string;

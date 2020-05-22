@@ -17,10 +17,6 @@
 #include "Graphics_Systems/graphics_mandatory.h"
 #include "Graphics_Systems/General/GScolors.h"
 
-#include <iostream>
-#include <cstring>
-#include <stdio.h>
-
 namespace enigma {
   void ScreenRefresh(){}
 }

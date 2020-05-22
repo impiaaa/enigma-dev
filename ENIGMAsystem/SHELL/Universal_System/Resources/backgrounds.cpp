@@ -24,6 +24,7 @@
 #include "Graphics_Systems/graphics_mandatory.h"
 #include "Graphics_Systems/General/GStextures.h"
 #include "Widget_Systems/widgets_mandatory.h"
+#include <algorithm>
 
 using enigma::Background;
 using enigma::backgrounds;
