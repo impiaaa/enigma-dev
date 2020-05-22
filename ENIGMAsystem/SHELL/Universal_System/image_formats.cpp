@@ -250,7 +250,7 @@ unsigned char* image_load_bmp(
     string filename, unsigned int* width, unsigned int* height,
     unsigned int* fullwidth, unsigned int* fullheight, bool flipped) {
   if (std::ifstream bmp{filename}) {
-    std::stringstream buffer;
+    std::ostringstream buffer;
     buffer << bmp.rdbuf();
     return image_decode_bmp(buffer.str(), width, height,
                             fullwidth, fullheight, flipped);
