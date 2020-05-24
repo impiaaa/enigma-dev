@@ -114,6 +114,8 @@ ifeq ($(PLATFORM), Win32)
 	endif
 endif
 
+override LDLIBS += $(LINKS)
+
 # CPPFLAGS needs these include dirs unconditionally
 override CPPFLAGS += $(SYSTEMS:%=-I%/Info)
 override CPPFLAGS += -I. -I$(CODEGEN) -I$(SHARED_SRC_DIR)
@@ -128,7 +130,7 @@ print_flags:
 	@echo "CXXFLAGS=\"$(CXXFLAGS) $(CPPFLAGS) $(INCLUDES)\""
 	@echo "CFLAGS=\"$(CFLAGS) $(CPPFLAGS)\""
 	@echo "LDFLAGS=\"$(LDFLAGS)\""
-	@echo "LDLIBS=\"$(LDIBS)\""
+	@echo "LDLIBS=\"$(LDLIBS)\""
 	@echo -e "################################################\n"
 
 clean:
