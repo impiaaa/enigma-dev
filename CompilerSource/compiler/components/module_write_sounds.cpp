@@ -69,12 +69,6 @@ int lang_CPP::module_write_sounds(const GameData &game, FILE *gameModule)
 
   for (size_t i = 0; i < sound_count; i++) {
     const size_t sndsz = game.sounds[i].audio.size();
-    if (!sndsz) {
-      user << "Sound `" << game.sounds[i].name << "' has no size. "
-              "It will be omitted from the game." << flushl;
-      continue;
-    }
-
     writei(game.sounds[i].id(), gameModule); // ID
     writei(sndsz, gameModule); // Size
     fwrite(game.sounds[i].audio.data(), 1, sndsz, gameModule); // Data

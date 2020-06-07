@@ -59,6 +59,8 @@ namespace enigma
 
       unsigned size;
       if (!fread(&size,1,4,exe)) return;
+      
+      if (size == 0) continue;
 
       char* fdata = new char[size];
       if (!fread(fdata,1,size,exe)) return;
