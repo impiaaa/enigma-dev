@@ -21,7 +21,7 @@
 namespace enigma_user
 {
 
-void ini_open(std::string fname);
+int ini_open(std::string fname);
 void ini_close();
 std::string ini_read_string(std::string section, std::string key, std::string defaultValue);
 float ini_read_real(std::string section, std::string key, float defaultValue);

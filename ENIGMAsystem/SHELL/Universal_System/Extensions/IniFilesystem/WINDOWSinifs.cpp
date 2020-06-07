@@ -44,11 +44,12 @@ static tstring iniFilename = L"";
 
 namespace enigma_user {
 
-void ini_open(string fname) {
+int ini_open(string fname) {
   wchar_t rpath[MAX_PATH];
   tstring tstr_fname = widen(fname);
   GetFullPathNameW(tstr_fname.c_str(), MAX_PATH, rpath, NULL);
   iniFilename = rpath;
+  return 0;
 }
 
 void ini_close() {

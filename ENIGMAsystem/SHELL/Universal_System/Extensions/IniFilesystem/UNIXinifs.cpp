@@ -56,13 +56,13 @@ namespace enigma_user
 		commentChar = ch;
 	}
 
-	void ini_open(std::string filename)
+	int ini_open(std::string filename)
 	{
 		//GM will silently fail to save anything if an invalidly-named file is selected. Since we flush the ini file on close, 
 		// we should try to filter out bad inis as early as possible (the final test will be in ini_close()).
 		if (filename.find_first_of(InvalidFilenameChars)!=std::string::npos) {
 			DEBUG_MESSAGE("IniFileSystem - cannot open new ini file; filename contains invalid characters.", MESSAGE_TYPE::M_ERROR);
-			return;
+			return -1;
 		}
 
 		//Opening an ini file without closing the previous one will simply call ini_close() first.
@@ -79,6 +79,7 @@ namespace enigma_user
 		if (infile.good()) { //If the file isn't good, it might be because we are creating a new ini file, so it's not an error.
 			currIni.load(infile, commentChar);
 		}
+		return 0;
 	}
 
 	void ini_open_from_string(std::string inistr) 
