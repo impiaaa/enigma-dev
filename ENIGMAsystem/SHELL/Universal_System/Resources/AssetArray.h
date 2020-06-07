@@ -47,7 +47,7 @@ class OffsetVector {
   OffsetVector(const OffsetVector<T, LEFT> &other):
     data_owner_(other.data_owner_), data_(data_owner_.data() - LEFT) {}
   size_t size() const {
-    return data_owner_.size() + LEFT;
+    return (data_owner_.size() < -LEFT) ? 0 : data_owner_.size() + LEFT;
   }
   T *data() { return data_; }
   const T *data() const { return data_; }
