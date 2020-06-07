@@ -66,7 +66,9 @@ void audio_listener_velocity(as_scalar vx, as_scalar vy, as_scalar vz);
 
 int audio_sound_length(int index);
 void audio_sound_pitch(int index, float pitch);
+float audio_sound_get_pitch(int index);
 void audio_sound_gain(int index, float volume, double time);
+float audio_sound_get_gain(int index);
 void audio_master_gain(float volume);
 
 void audio_channel_num(int num);

@@ -249,6 +249,22 @@ void audio_sound_gain(int index, float volume, double time) {
   }
 }
 
+float audio_sound_get_gain(int index) {
+  float volume;
+  if (index >= 200000) {
+    alGetSourcef(sound_channels[index - 200000]->source, AL_GAIN, &volume);
+    return volume;
+  } else {
+    for (size_t i = 0; i < sound_channels.size(); i++) {
+      if (sound_channels[i]->soundIndex == index) {
+        alGetSourcef(sound_channels[i]->source, AL_GAIN, &volume);
+        return volume;
+      }
+    }
+  }
+  return 0;
+}
+
 void audio_sound_pitch(int index, float pitch) {
   if (index >= 200000) {
     alSourcef(sound_channels[index - 200000]->source, AL_PITCH, pitch);
@@ -259,6 +275,22 @@ void audio_sound_pitch(int index, float pitch) {
       }
     }
   }
+}
+
+float audio_sound_get_pitch(int index) {
+  float pitch;
+  if (index >= 200000) {
+    alGetSourcef(sound_channels[index - 200000]->source, AL_PITCH, &pitch);
+    return pitch;
+  } else {
+    for (size_t i = 0; i < sound_channels.size(); i++) {
+      if (sound_channels[i]->soundIndex == index) {
+        alGetSourcef(sound_channels[i]->source, AL_PITCH, &pitch);
+        return pitch;
+      }
+    }
+  }
+  return 0;
 }
 
 void audio_listener_orientation(as_scalar lookat_x, as_scalar lookat_y, as_scalar lookat_z, as_scalar up_x,
