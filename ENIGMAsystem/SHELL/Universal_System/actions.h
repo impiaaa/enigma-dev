@@ -246,17 +246,17 @@ inline void action_sleep(const double milliseconds, const int redraw) {
     sleep(milliseconds);
 }
 
-inline void action_current_room(const int transition) {
+inline void action_current_room(const int transition=0) {
     //transition_kind=transition;
     room_restart();
 }
 
-inline void action_previous_room(const int transition) {
+inline void action_previous_room(const int transition=0) {
     //transition_kind=transition;
     room_goto_previous();
 }
 
-inline void action_next_room(const int transition) {
+inline void action_next_room(const int transition=0) {
     //transition_kind=transition;
     room_goto_next();
 }
