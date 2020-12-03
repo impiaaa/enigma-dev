@@ -203,7 +203,7 @@ namespace enigma_user
 	}
 	
 	//TODO: GM reads floats (or maybe doubles); Enigma uses ints.
-	float ini_read_real(string section, string key, float def)
+	var ini_read_real(string section, string key, var def)
 	{
 		//GM will err out when trying to read/write an unopened ini file.
 		if (currIniFile.empty()) {

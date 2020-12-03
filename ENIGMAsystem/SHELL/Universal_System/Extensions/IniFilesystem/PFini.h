@@ -17,6 +17,7 @@
 **/
 
 #include <string>
+#include "Universal_System/var4.h"
 
 namespace enigma_user
 {
@@ -24,7 +25,7 @@ namespace enigma_user
 int ini_open(std::string fname);
 void ini_close();
 std::string ini_read_string(std::string section, std::string key, std::string defaultValue);
-float ini_read_real(std::string section, std::string key, float defaultValue);
+var ini_read_real(std::string section, std::string key, var defaultValue);
 void ini_write_string(std::string section, std::string key, std::string value);
 void ini_write_real(std::string section, std::string key, float value);
 bool ini_key_exists(std::string section, std::string key);
