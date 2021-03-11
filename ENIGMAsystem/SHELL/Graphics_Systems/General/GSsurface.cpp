@@ -452,4 +452,12 @@ void surface_copy(int destination, gs_scalar x, gs_scalar y, int source)
   delete[] surfbuf;
 }
 
+void surface_resize(int id, int w, int h)
+{
+  surface_free(id);
+  int new_id = surface_create(w, h);
+  enigma::surfaces[id] = enigma::surfaces[new_id];
+  delete enigma::surfaces[new_id];
+}
+
 } // namespace enigma_user

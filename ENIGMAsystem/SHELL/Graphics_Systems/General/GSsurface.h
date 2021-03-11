@@ -67,6 +67,8 @@ namespace enigma_user
   int sprite_create_from_surface(int id, int x, int y, int w, int h, bool removeback, bool smooth, int xorig, int yorig);
   int sprite_create_from_surface(int id, int x, int y, int w, int h, bool removeback, bool smooth, bool preload, int xorig, int yorig);
   void sprite_add_from_surface(int ind, int id, int x, int y, int w, int h, bool removeback, bool smooth);
+  
+  void surface_resize(int id, int w, int h);
 
   bool surface_is_supported();
   #define surface_destroy surface_free

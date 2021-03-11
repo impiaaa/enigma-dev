@@ -8,7 +8,12 @@
 
 namespace enigma_user {
 
+#ifdef JUST_DEFINE_IT_RUN
+int asset_get_index(std::string resource, enigma_user::AssetType type);
+int asset_get_index(std::string resource);
+#else
 int asset_get_index(std::string resource, enigma_user::AssetType type = asset_any);
+#endif
 int asset_get_type(std::string resource);
 
 }

@@ -77,6 +77,8 @@ bool show_question(std::string str);
 
 void show_debug_message(std::string msg, MESSAGE_TYPE type = M_INFO);
 
+inline void show_debug_overlay(bool enable) { }
+
 // This obviously displays an error message.
 // It should offer a button to end the game, and if not fatal, a button to ignore the error.
 inline void show_error(std::string msg, const bool fatal) {

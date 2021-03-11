@@ -80,6 +80,7 @@ bool lang_CPP::is_variadic_function(jdi::definition *d) {
 }
 
 int lang_CPP::function_variadic_after(jdi::definition_function *func) {
+  if (!func) return -1;
   for (const auto &overload_pair : func->overloads) {
     jdi::definition_overload *ov = overload_pair.second;
     const int rva = referencers_varargs_at(ov->referencers, enigma_type__varargs);

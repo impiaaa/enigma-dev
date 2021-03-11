@@ -588,4 +588,22 @@ bool tile_layer_shift(int layer_depth, int x, int y)
     return false;
 }
 
+std::vector<int> tile_get_ids_at_depth(int layer_depth)
+{
+    std::vector<int> v;
+    for (enigma::diter dit = enigma::drawing_depths.rbegin(); dit != enigma::drawing_depths.rend(); dit++)
+        if (dit->second.tiles.size())
+        {
+            if (dit->second.tiles[0].depth != layer_depth)
+                continue;
+            v.reserve(dit->second.tiles.size());
+            for(std::vector<enigma::tile>::size_type i = 0; i !=  dit->second.tiles.size(); i++)
+            {
+                enigma::tile t = dit->second.tiles[i];
+                v.push_back(t.id);
+            }
+        }
+    return v;
+}
+
 }

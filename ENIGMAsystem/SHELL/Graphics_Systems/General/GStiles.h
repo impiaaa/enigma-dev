@@ -52,5 +52,6 @@ namespace enigma_user
   bool tile_layer_hide(int layer_depth);
   bool tile_layer_show(int layer_depth);
   bool tile_layer_shift(int layer_depth, int x, int y);
+  std::vector<int> tile_get_ids_at_depth(int layer_depth);
 }
 #endif //ENIGMA_GSTILES_H
